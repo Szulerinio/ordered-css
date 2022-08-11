@@ -15,7 +15,7 @@ export function activate(context: vscode.ExtensionContext) {
   // The commandId parameter must match the command field in package.json
   let disposable = vscode.commands.registerCommand(
     "ordered-css.orderCSS",
-    () => {
+    async () => {
       // The code you place here will be executed every time your command is executed
       // Display a message box to the user
 
@@ -24,6 +24,7 @@ export function activate(context: vscode.ExtensionContext) {
         vscode.window.showInformationMessage("No editor available!");
         return;
       }
+      await vscode.commands.executeCommand("expandLineSelection");
       const text = editor.document.getText(editor.selection); //get selected text
       const splitted = text.split(";"); //split text into lines
       let props: UsedPropsInterface = {};
