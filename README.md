@@ -20,6 +20,10 @@ Default order is just alphabetical order
 
 ## Release Notes
 
-### 0.1.0
+### 0.0.2
+
+auto slect whole line
+
+### 0.0.1
 
 first release
